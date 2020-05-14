@@ -1,3 +1,9 @@
+/*
+ * @lc app=leetcode id=136 lang=cpp
+ *
+ * [136] Single Number
+ */
+
 #include <iostream>
 #include <map>
 #include <set>
@@ -10,6 +16,7 @@ using namespace std;
 std::vector<int> test_case1{2, 2, 1};
 std::vector<int> test_case2{4, 1, 2, 1, 2};
 
+// @lc code=start
 class Solution {
 public:
   int singleNumber(vector<int> &nums) {
@@ -47,6 +54,7 @@ public:
     return *temp.begin();
   }
 };
+// @lc code=end
 
 TEST_CASE("single number") {
   Solution solution;

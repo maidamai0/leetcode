@@ -8,6 +8,10 @@ project(${PROJECT} CXX)
 
 enable_testing()
 
+# for doctest
+add_compile_definitions("DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN")
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/deps/doctest)
+
 file(GLOB srcs "*.cpp")
 foreach(src ${srcs})
     get_filename_component(TARGET ${src} NAME_WLE)
