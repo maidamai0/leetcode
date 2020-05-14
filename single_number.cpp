@@ -1,8 +1,9 @@
-#include <cassert>
 #include <iostream>
 #include <map>
 #include <set>
 #include <vector>
+
+#include "doctest/doctest.h"
 
 using namespace std;
 
@@ -47,16 +48,14 @@ public:
   }
 };
 
-int main() {
+TEST_CASE("single number") {
   Solution solution;
-  assert(solution.singleNumber(test_case1) == 1);
-  assert(solution.singleNumber(test_case2) == 4);
+  CHECK(solution.singleNumber(test_case1) == 1);
+  CHECK(solution.singleNumber(test_case2) == 4);
 
-  assert(solution.singleNumber_xor(test_case1) == 1);
-  assert(solution.singleNumber_xor(test_case2) == 4);
+  CHECK(solution.singleNumber_xor(test_case1) == 1);
+  CHECK(solution.singleNumber_xor(test_case2) == 4);
 
-  assert(solution.singleNumber_set(test_case1) == 1);
-  assert(solution.singleNumber_set(test_case2) == 4);
-
-  return 0;
+  CHECK(solution.singleNumber_set(test_case1) == 1);
+  CHECK(solution.singleNumber_set(test_case2) == 4);
 }

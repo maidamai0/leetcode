@@ -2,4 +2,4 @@
 build
 .clangd
 trace.json
-compile_commands.json
+*.json
