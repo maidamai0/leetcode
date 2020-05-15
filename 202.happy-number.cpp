@@ -1,7 +1,14 @@
+/*
+ * @lc app=leetcode id=202 lang=cpp
+ *
+ * [202] Happy Number
+ */
+
 #include <iostream>
 #include <set>
 #include <vector>
 
+// @lc code=start
 class Solution {
 public:
   bool isHappy(int n) { return floyd_detection(n); }
@@ -52,6 +59,7 @@ private:
 private:
   std::set<int> history_;
 };
+// @lc code=end
 
 auto main() -> int {
   Solution solution;

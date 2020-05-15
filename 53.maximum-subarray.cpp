@@ -1,3 +1,9 @@
+/*
+ * @lc app=leetcode id=53 lang=cpp
+ *
+ * [53] Maximum Subarray
+ */
+
 #include <algorithm>
 #include <numeric>
 #include <vector>
@@ -680,6 +686,7 @@ std::vector<int> case_4{
 
 std::vector<int> case_5{-2, -9};
 
+// @lc code=start
 class Solution {
 public:
   int maxSubArray(vector<int> &nums) { return mohit_kumar_algorithm(nums); }
@@ -740,6 +747,7 @@ private:
     return max_so_far;
   }
 };
+// @lc code=end
 
 TEST_CASE("official test") {
   Solution solution;
