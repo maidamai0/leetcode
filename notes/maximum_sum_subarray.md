@@ -25,3 +25,4 @@ Notes about the maximum sum subarray problem
 
 1. [wikipedia](https://en.wikipedia.org/wiki/Maximum_subarray_problem)
 2. [different methods](https://cs.slu.edu/~goldwamh/courses/slu/csci314/2012_Fall/lectures/maxsubarray/)
+3. [geeksforgeeks implementation](https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/)

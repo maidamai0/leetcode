@@ -5,7 +5,9 @@
  */
 
 #include <algorithm>
+#include <limits>
 #include <numeric>
+#include <vcruntime.h>
 #include <vector>
 
 #include "doctest/doctest.h"
@@ -689,15 +691,13 @@ std::vector<int> case_5{-2, -9};
 // @lc code=start
 class Solution {
 public:
-  int maxSubArray(vector<int> &nums) { return mohit_kumar_algorithm(nums); }
+  int maxSubArray(vector<int> &nums) { return divide_and_conquer(nums); }
 
 private:
-  // timeout
-  int brute_force(std::vector<int> &nums) {
-    const auto size = nums.size();
-
+  // timeout, O(n^3)
+  int cubic_brute_force(const std::vector<int> &nums) const {
     int sum = std::numeric_limits<int>::min();
-    for (size_t len = 1; len <= size; ++len) {
+    for (size_t len = 1; len <= nums.size(); ++len) {
       auto start = nums.begin();
       auto end = start + len - 1;
 
@@ -714,8 +714,22 @@ private:
     return sum;
   }
 
-  //  can not handle all negative case
-  int kadane_algorithm(std::vector<int> nums) {
+  // O(n^2)
+  int quadradic_brute_force(const std::vector<int> nums) const {
+    int sum = std::numeric_limits<int>::min();
+    for (size_t i = 0; i < nums.size(); ++i) {
+      int sum_temp = 0;
+      for (size_t j = i; j < nums.size(); ++j) {
+        sum_temp += nums[j];
+        sum = std::max(sum, sum_temp);
+      }
+    }
+
+    return sum;
+  }
+
+  //  can not handle all negative case, O(n)
+  int kadane_algorithm(const std::vector<int> &nums) const {
     int max_so_far = std::numeric_limits<int>::min();
     int max_ending_here = 0;
 
@@ -734,7 +748,47 @@ private:
     return max_so_far;
   }
 
-  int mohit_kumar_algorithm(std::vector<int> &nums) {
+  // divide and conquer, O(nlogn)
+  int divide_and_conquer(const std::vector<int> &nums) const {
+    return divide_and_conquer_impl(0, nums.size() - 1, nums);
+  }
+
+  auto divide_and_conquer_impl(int left, int right,
+                               const std::vector<int> &nums) const -> int {
+    // zero elements
+    if (left > right) {
+      return 0;
+    }
+
+    // 1 elements
+    if (left == right) {
+      return std::max(nums[left], 0);
+    }
+
+    int left_max = 0;
+    int sum = 0;
+    auto middle = (right + left) / 2;
+
+    // left half
+    for (int i = middle; i >= left; --i) {
+      sum += nums[i];
+      left_max = std::max(sum, left_max);
+    }
+
+    int right_max = 0;
+    sum = 0;
+    for (int j = 0; j < right; ++j) {
+      sum += nums[j];
+      right_max = std::max(right_max, sum);
+    }
+
+    return std::max(std::max(divide_and_conquer_impl(left, middle, nums),
+                             divide_and_conquer_impl(middle + 1, right, nums)),
+                    right_max + left_max);
+  };
+
+  // cover all cases, O(n)
+  int mohit_kumar_algorithm(const std::vector<int> &nums) const {
     int max_so_far = nums[0];
     int max_ending_here = nums[0];
     for (const auto num : std::vector<int>{nums.begin() + 1, nums.end()}) {
