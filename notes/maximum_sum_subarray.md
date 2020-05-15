@@ -4,7 +4,7 @@ Notes about the maximum sum subarray problem
 
 ## History
 
-```plantuml
+```plantuml:maximum_sum_subarray_history
 
 @startuml problem History
 (*)-->  [ULf Grenander]    "1977,2d problem proposed"
@@ -18,6 +18,8 @@ Notes about the maximum sum subarray problem
 @enduml
 
 ```
+
+![plantuml](http://www.plantuml.com/plantuml/svg/PP31IWD138Rl-nIX5rlP7kobzY952efQ1CMJAAITj3kwawb9LkdDT_0DVH8dbKBHN9Oi-Ru_cQaQYdMfXOtaHKi9BgDQbctLFnuCXsS0ZmytAxWGOkH0yWIbUYUJyRWUXJtZtqrM2htA4Qz_b6CBwOnWbML9y16jWTi-Fuy6_WSo4uIOY3LcFl3Cux91Qk6-mPJrDpx4znW8a0CiCxzr96vgyve71-GLRk4Q0pBjA0UjAV6eHcfr8GwdPrYSPUD87k8ddexgMNnvLHCyKb0hSIW1l3TQRsluOxZpJSl0UPImLqpgNVlz-JKd4YDMFpPX6pNjqFBALJKb3brgVm00)
 
 ## Reference
 
