@@ -4,6 +4,9 @@ get_filename_component(PROJECT ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 
 project(${PROJECT} CXX)
 
+# cxx standard
+set(CMAKE_CXX_STANDARD 20)
+
 # include(Dart)
 
 enable_testing()
