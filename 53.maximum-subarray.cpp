@@ -691,7 +691,7 @@ std::vector<int> case_5{-2, -9};
 // @lc code=start
 class Solution {
 public:
-  int maxSubArray(vector<int> &nums) { return divide_and_conquer(nums); }
+  int maxSubArray(vector<int> &nums) { return mohit_kumar_algorithm(nums); }
 
 private:
   // timeout, O(n^3)
