@@ -1,5 +1,9 @@
 # Counting bits
 
+Count the number of `1`s of a binary integer.
+
+## Basics
+
 ``` binary
 10  1010
 9   1001
@@ -33,11 +37,13 @@ Operation `n&(n-1)` removes exactly one `1` from `n`, so you can get:
 f(n) = f(n&(n-1)) +1
 ```
 
+## Implementation in cpp
+
 ```cpp
 int count_bits(const int num){
-    int sum = 0;
-    for(int i=0; i<=num; ++i>){
-        sum += 
+    vector<int> sum(num+1,0);
+    for(int i=1; i<=num; ++i){
+        sum[i] = sum[i&(i-1)]+1;
     }
 }
 ```
