@@ -1,4 +1,4 @@
-# Notes of my leetcode praticing
+# Notes of my leetcode practicing
 
 ## Structure
 
