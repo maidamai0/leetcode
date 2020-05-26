@@ -18,6 +18,12 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/deps/doctest)
 # for magic enum
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/deps/magic_enum/include)
 
+# time measure
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/deps/time_measure)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/deps/time_measure/include)
+
+link_libraries(time_measurement)
+
 file(GLOB srcs "*.cpp")
 foreach(src ${srcs})
     get_filename_component(TARGET ${src} NAME_WLE)
