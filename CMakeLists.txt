@@ -24,6 +24,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/deps/time_measure/include)
 
 link_libraries(time_measurement)
 
+# fmt
+find_package(fmt CONFIG REQUIRED)
+link_libraries(fmt::fmt)
+
 file(GLOB srcs "*.cpp")
 foreach(src ${srcs})
     get_filename_component(TARGET ${src} NAME_WLE)
