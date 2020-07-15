@@ -5,6 +5,9 @@ get_filename_component(PROJECT ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 project(${PROJECT} CXX)
 
 # cxx standard
+# TODO use cxx20 when doctest is updated to 2.40
+# doctest 2.37 in vcpkg has a bug of std::uncaught_exception
+# see https://github.com/onqtam/doctest/issues/333 for detail
 set(CMAKE_CXX_STANDARD 17)
 
 # include(Dart)
