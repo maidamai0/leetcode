@@ -5,7 +5,7 @@ get_filename_component(PROJECT ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 project(${PROJECT} CXX)
 
 # cxx standard
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
 # include(Dart)
 
@@ -13,10 +13,12 @@ enable_testing()
 
 # for doctest
 add_compile_definitions("DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN")
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/deps/doctest)
+find_package(doctest CONFIG REQUIRED)
+link_libraries(doctest::doctest)
 
 # for magic enum
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/deps/magic_enum/include)
+find_package(magic_enum CONFIG REQUIRED)
+link_libraries(magic_enum::magic_enum)
 
 # time measure
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/deps/time_measure)
