@@ -5,6 +5,7 @@
  */
 
 #include "common/common.hpp"
+#include "doctest/doctest.h"
 #include "fmt/core.h"
 #include "fmt/format.h"
 
@@ -38,20 +39,30 @@ public:
 };
 // @lc code=end
 
-int main(int argc, char **argv) {
+TEST_CASE("tree") {
   Solution sl;
-  {
-    auto root = new TreeNode(5);
-    root->left = new TreeNode(4);
-    root->right = new TreeNode(8);
 
-    root->left->left = new TreeNode(11);
-    root->left->left->left = new TreeNode(7);
-    root->left->left->right = new TreeNode(2);
+  auto root = new TreeNode(5);
+  root->left = new TreeNode(4);
+  root->right = new TreeNode(8);
 
-    root->right->left = new TreeNode(13);
-    root->right->right = new TreeNode(4);
-    root->right->right->right = new TreeNode(1);
-    fmt::print("has path? {}\n", sl.hasPathSum(root, 210000));
-  }
+  root->left->left = new TreeNode(11);
+  root->left->left->left = new TreeNode(7);
+  root->left->left->right = new TreeNode(2);
+
+  root->right->left = new TreeNode(13);
+  root->right->right = new TreeNode(4);
+  root->right->right->right = new TreeNode(1);
+  const auto res = sl.hasPathSum(root, 22);
+  fmt::print("has path? {}\n", res);
+  CHECK(res == true);
+}
+
+TEST_CASE("tree") {
+  Solution sl;
+  auto root = new TreeNode(1);
+  root->left = new TreeNode(2);
+  const auto res = sl.hasPathSum(root, 1);
+  fmt::print("has path? {}\n", res);
+  CHECK(res == false);
 }
