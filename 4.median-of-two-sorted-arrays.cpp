@@ -52,14 +52,7 @@ private:
         merged.push_back(nums2[index_2++]);
       }
     }
-
-    if (size & 0x1) {
-      return static_cast<double>(merged[merged_size - 1]);
-    } else {
-      return (static_cast<double>(merged[merged_size - 1]) +
-              static_cast<double>(merged[merged_size - 2])) /
-             2;
-    }
+    return get_median_from_sorted(merged, size);
   }
 
   double get_median_from_sorted(const std::vector<int> &nums,
