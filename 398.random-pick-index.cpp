@@ -6,8 +6,9 @@
 
 #include <algorithm>
 #include <cstdlib>
-#include <vcruntime.h>
 #include <vector>
+
+#include "doctest/doctest.h"
 
 using namespace std;
 

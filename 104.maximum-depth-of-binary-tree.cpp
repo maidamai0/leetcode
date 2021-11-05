@@ -4,8 +4,10 @@
  * [104] Maximum Depth of Binary Tree
  */
 
-#include "common/common.hpp"
 #include <algorithm>
+
+#include "common/common.hpp"
+#include "doctest/doctest.h"
 
 // @lc code=start
 /**

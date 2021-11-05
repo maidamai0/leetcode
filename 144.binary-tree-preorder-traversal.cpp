@@ -5,6 +5,9 @@
  */
 
 #include <vector>
+
+#include "doctest/doctest.h"
+
 using namespace std;
 
 //   Definition for a binary tree node.

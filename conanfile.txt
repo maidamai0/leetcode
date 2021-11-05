@@ -1,0 +1,7 @@
+[requires]
+doctest/2.4.6
+magic_enum/0.7.3
+fmt/8.0.1
+
+[generators]
+cmake_find_package 

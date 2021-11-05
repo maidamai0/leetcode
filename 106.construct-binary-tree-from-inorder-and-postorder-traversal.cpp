@@ -4,10 +4,11 @@
  * [106] Construct Binary Tree from Inorder and Postorder Traversal
  */
 
-#include "common/common.hpp"
-
 #include <algorithm>
 #include <vector>
+
+#include "common/common.hpp"
+#include "doctest/doctest.h"
 
 using std::vector;
 

@@ -8,6 +8,8 @@
 #include <iterator>
 #include <vector>
 
+#include "doctest/doctest.h"
+
 using namespace std;
 
 struct TreeNode {
