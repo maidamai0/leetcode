@@ -1,0 +1,7 @@
+file(GLOB_RECURSE srcs "*.cpp")
+foreach(src ${srcs})
+    get_filename_component(TARGET ${src} NAME_WLE)
+    message(STATUS "target ${TARGET} added")
+    add_executable(${TARGET} ${src})
+    add_test(${TARGET} ${TARGET})   
+endforeach()

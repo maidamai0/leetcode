@@ -37,6 +37,8 @@
  *
  */
 
+#include "doctest/doctest.h"
+
 // @lc code=start
 #include <unordered_set>
 #include <vector>

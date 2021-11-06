@@ -6,17 +6,20 @@
 
 #include <unordered_map>
 #include <vector>
+
+#include "doctest/doctest.h"
+
 using namespace std;
 
 // @lc code=start
 class Solution {
-public:
+ public:
   vector<int> twoSum(vector<int> &nums, int target) {
     // return brute_force(nums, target);
     return hash_map(nums, target);
   }
 
-private:
+ private:
   vector<int> brute_force(const vector<int> &nums, int target) {
     for (int i = 0; i < nums.size(); ++i) {
       for (int j = i + 1; j < nums.size(); ++j) {
