@@ -2,9 +2,21 @@
 
 ## Structure
 
-Code is in the root path,every `cpp` file is a solution to a problem on [LeetCode](https://leetcode.com/)
+Every `cpp` file is a solution to a problem on [LeetCode](https://leetcode.com/)
 
 Some notes about the sulution for particular problem are in the [notes](notes/README.md) directory.
+
+## How to build
+
+[conan](https://conan.io/) is used to manage dependency， [cmake](https://cmake.org/) is used to generate project files, [ninjia](https://ninja-build.org/) is used to build.
+
+```cmd
+mkdir build
+cd build
+conan install ..
+cmake ..
+ninja
+```
 
 ## Tools I used
 
