@@ -16,57 +16,20 @@ std::vector<std::vector<int>> test_cases = {
 // @lc code=start
 class Solution {
 public:
-  void moveZeroes(vector<int> &nums) { official(nums); }
+ void moveZeroes(vector<int> &nums) {
+   decltype(nums.size()) left = 0;
+   decltype(left) right = 0;
+   while (right < nums.size()) {
+     if (nums[right] != 0) {
+       nums[left++] = nums[right];
+     }
+     right++;
+   }
 
-private:
-  void brute_force(vector<int> &nums) {
-    for (size_t i = 0; i < nums.size(); ++i) {
-
-      bool all_zero_left = true;
-      // current element is zero
-      if (nums[i] == 0) {
-
-        //  find next non-zero element
-        for (size_t j = i + 1; j < nums.size(); ++j) {
-          if (nums[j] != 0) {
-            std::swap(nums[i], nums[j]);
-            all_zero_left = false;
-            break;
-          }
-        }
-
-        if (all_zero_left) {
-          return;
-        }
-      }
-    }
-  }
-
-  // O(n), fastest
-  void skip_swap(std::vector<int> &nums) {
-    size_t left_most_zero = 0;
-    for (size_t i = 0; i < nums.size(); ++i) {
-
-      //  zero element
-      if (nums[i] == 0) {
-        if (nums[left_most_zero] != 0) {
-          left_most_zero = i;
-        }
-      } else if (nums[left_most_zero] == 0) {
-        std::swap(nums[i], nums[left_most_zero]);
-        ++left_most_zero;
-      }
-    }
-  }
-
-  // O(n)
-  void official(std::vector<int> &nums) {
-    for (int lastNonZeroFoundAt = 0, cur = 0; cur < nums.size(); cur++) {
-      if (nums[cur] != 0) {
-        swap(nums[lastNonZeroFoundAt++], nums[cur]);
-      }
-    }
-  }
+   while (left < nums.size()) {
+     nums[left++] = 0;
+   }
+ }
 };
 // @lc code=end
 
