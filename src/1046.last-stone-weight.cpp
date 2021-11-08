@@ -8,7 +8,6 @@
 #include <cstdlib>
 #include <queue>
 #include <utility>
-#include <vcruntime.h>
 #include <vector>
 
 #include "doctest/doctest.h"

@@ -8,7 +8,6 @@
 #include <array>
 #include <numeric>
 #include <string>
-#include <vcruntime.h>
 #include <vector>
 
 #include "doctest/doctest.h"
