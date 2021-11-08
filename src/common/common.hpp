@@ -35,5 +35,5 @@ struct TreeNode {
 };
 
 template <typename... T> ListNode *CreateListNode(int value, T... args) {
-  return new ListNode(value, CreateListNode(args));
+  return new ListNode(value, CreateListNode(args...));
 }
