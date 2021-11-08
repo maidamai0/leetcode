@@ -1,5 +1,8 @@
 # Notes of my leetcode practicing
 
+![Windows](https://github.com/maidamai0/leetcode/actions/workflows/windows.yml/badge.svg)
+![Linux](https://github.com/maidamai0/leetcode/actions/workflows/linux.yml/badge.svg)
+
 ## Structure
 
 Every `cpp` file is a solution to a problem on [LeetCode](https://leetcode.com/)

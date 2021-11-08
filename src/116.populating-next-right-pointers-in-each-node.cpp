@@ -5,7 +5,6 @@
  */
 
 #include <map>
-#include <vcruntime.h>
 #include <vector>
 
 class Node {

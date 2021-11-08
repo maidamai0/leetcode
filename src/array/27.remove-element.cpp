@@ -82,9 +82,6 @@
  *
  *
  */
-
-#include <vcruntime.h>
-
 #include <vector>
 
 #include "doctest/doctest.h"
