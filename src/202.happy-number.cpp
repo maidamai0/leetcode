@@ -8,6 +8,8 @@
 #include <set>
 #include <vector>
 
+#include "doctest/doctest.h"
+
 // @lc code=start
 class Solution {
 public:
@@ -60,12 +62,12 @@ private:
   std::set<int> history_;
 };
 // @lc code=end
+TEST_CASE("example 1") {
+  Solution s;
+  CHECK(s.isHappy(19) == true);
+}
 
-auto main() -> int {
-  Solution solution;
-
-  for (int i = 0; i < 1000; i++) {
-    std::boolalpha(std::cout);
-    std::cout << i << " is happy?" << solution.isHappy(i) << std::endl;
-  }
+TEST_CASE("example 2") {
+  Solution s;
+  CHECK(s.isHappy(2) == false);
 }
