@@ -42,7 +42,7 @@
  *
  * Follow up: Could you do it in O(n) time and O(1) space?
  */
-#include "common./common.hpp"
+#include "common/common.hpp"
 #include "doctest/doctest.h"
 // @lc code=start
 /**
