@@ -41,7 +41,7 @@ struct ListNode {
 // @lc code=start
 class Solution {
 public:
-  ListNode *middleNode(ListNode *head) { return brute_force(head); }
+ ListNode *middleNode(ListNode *head) { return two_pointer(head); }
 
 private:
   ListNode *brute_force(ListNode *head) {
@@ -53,6 +53,18 @@ private:
     }
 
     return nodes[nodes.size() / 2];
+  }
+
+ private:
+  ListNode *two_pointer(ListNode *head) {
+    auto *slow = head;
+    auto *fast = head;
+
+    while (fast && fast->next) {
+      slow = slow->next;
+      fast = fast->next->next;
+    }
+    return slow;
   }
 };
 // @lc code=end
