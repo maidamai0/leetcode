@@ -50,16 +50,12 @@ class Solution {
  public:
   vector<int> sortArrayByParity(vector<int>& nums) {
     int odd = 0;
-    int even = 1;
-    while (odd < nums.size() && even < nums.size()) {
-      if (is_even(nums[odd])) {
-        odd++;
-        even = odd + 1;
-      } else if (!is_even(nums[odd]) && is_even(nums[even])) {
-        swap(nums[odd++], nums[even++]);
-      } else if (!is_even(nums[even])) {
-        ++even;
+    int even = 0;
+    while (even < nums.size()) {
+      if (nums[even] % 2 == 0) {
+        swap(nums[odd++], nums[even]);
       }
+      ++even;
     }
 
     return nums;
