@@ -34,6 +34,12 @@ struct TreeNode {
       : val(x), left(left), right(right) {}
 };
 
-template <typename... T> ListNode *CreateListNode(int value, T... args) {
+
+template <typename T>
+ListNode *CreateListNode(T value) {
+  return new ListNode(value);
+}
+
+template <typename T, typename... Ts> ListNode *CreateListNode(T value, Ts... args) {
   return new ListNode(value, CreateListNode(args...));
 }
