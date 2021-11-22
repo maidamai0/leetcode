@@ -20,7 +20,11 @@ find_package(magic_enum REQUIRED)
 link_libraries(magic_enum::magic_enum)
 
 if(MSVC)
-    add_compile_options(/EHsc /W4)
+    add_compile_options(/EHsc /W4 /Zc:__cplusplus)
+endif()
+
+if(WIN32)
+    add_compile_definitions(UNICODE _UNICODE)
 endif()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
