@@ -43,7 +43,6 @@
  *
  *
  */
-#include <vcruntime.h>
 
 #include "doctest/doctest.h"
 
