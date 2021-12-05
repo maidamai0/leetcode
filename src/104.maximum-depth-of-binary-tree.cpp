@@ -1,13 +1,11 @@
+#include "common/common.hpp"
+#include "doctest/doctest.h"
+
 /*
  * @lc app=leetcode id=104 lang=cpp
  *
  * [104] Maximum Depth of Binary Tree
  */
-
-#include <algorithm>
-
-#include "common/common.hpp"
-#include "doctest/doctest.h"
 
 // @lc code=start
 /**
@@ -39,3 +37,38 @@ private:
   }
 };
 // @lc code=end
+TEST_CASE("104.maximum-depth-of-binary-tree") {
+  Solution s;
+  {
+    auto root = new TreeNode(3);
+    root->left = new TreeNode(9);
+    root->right = new TreeNode(20);
+    root->right->left = new TreeNode(15);
+    root->right->right = new TreeNode(7);
+    CHECK(s.maxDepth(root) == 3);
+  }
+
+  {
+    auto root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+    root->right->left = new TreeNode(6);
+    root->right->right = new TreeNode(7);
+    CHECK(s.maxDepth(root) == 3);
+  }
+
+  {
+    auto root = new TreeNode(1);
+    root->right = new TreeNode(2);
+    CHECK(s.maxDepth(root) == 2);
+  }
+
+  { CHECK(s.maxDepth(nullptr) == 0); }
+
+  {
+    auto root = new TreeNode(0);
+    CHECK(s.maxDepth(root) == 1);
+  }
+}
