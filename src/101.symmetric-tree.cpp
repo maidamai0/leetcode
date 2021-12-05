@@ -1,14 +1,5 @@
-/*
- * @lc app=leetcode id=101 lang=cpp
- *
- * [101] Symmetric Tree
- */
-
 #include "common/common.hpp"
-#include <algorithm>
-#include <iostream>
-#include <list>
-#include <ostream>
+#include "doctest/doctest.h"
 
 // @lc code=start
 /**
@@ -23,6 +14,13 @@
  * right(right) {}
  * };
  */
+
+/*
+ * @lc app=leetcode id=101 lang=cpp
+ *
+ * [101] Symmetric Tree
+ */
+
 class Solution {
 public:
   bool isSymmetric(TreeNode *root) {
@@ -81,7 +79,7 @@ public:
 };
 // @lc code=end
 
-int main(int argc, char **argv) {
+TEST_CASE("101.symmetric-tree") {
   Solution sl;
   {
     auto root = new TreeNode(1);
@@ -94,8 +92,6 @@ int main(int argc, char **argv) {
 
     sl.isSymmetric(root);
   }
-
-  //   std::cout << std::endl;
 
   {
     auto root = new TreeNode(1);
