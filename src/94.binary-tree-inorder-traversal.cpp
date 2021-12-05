@@ -36,48 +36,110 @@ struct TreeNode {
 class Solution {
 public:
   vector<int> inorderTraversal(TreeNode *root) {
-    recursive(root);
-    return result_;
+    // std::vector<int> res;
+    // recursive(root, res);
+    // return res;
+    return iterative(root);
   }
 
 private:
-  void recursive(TreeNode *root) {
+  std::vector<int> recursive(TreeNode *root, std::vector<int> &result) {
     if (!root) {
-      return;
+      return result;
     }
 
-    recursive(root->left);
-    result_.push_back(root->val);
-    recursive(root->right);
+    recursive(root->left, result);
+    result.push_back(root->val);
+    recursive(root->right, result);
+
+    return result;
   }
 
-  void iterative(TreeNode *node) {
+  std::vector<int> iterative(TreeNode *node) {
+    std::vector<int> result;
     if (!node) {
-      return;
+      return result;
     }
 
-    vector<TreeNode *> nodes;
-    nodes.push_back(node);
-    while (!nodes.empty()) {
-
-      // run to last left
-      while (node->left) {
-        nodes.push_back(node->left);
+    std::stack<TreeNode *> stack;
+    while (node || !stack.empty()) {
+      while (node) {
+        stack.push(node);
         node = node->left;
       }
 
-      // get left value
-      result_.push_back(node->val);
-      result_.pop_back();
-
-      node = nodes.back();
-      nodes.pop_back();
-      result_.push_back(node->val);
+      node = stack.top();
+      stack.pop();
+      result.push_back(node->val);
       node = node->right;
     }
-  }
 
-private:
-  vector<int> result_;
+    return result;
+  }
 };
 // @lc code=end
+
+TEST_CASE("94.binary-tree-inorder-traversal") {
+  Solution s;
+  {
+    auto *root = new TreeNode(1);
+    root->right = new TreeNode(2);
+    root->right->left = new TreeNode(3);
+    auto result = s.inorderTraversal(root);
+    CHECK(result == vector<int>{1, 3, 2});
+  }
+
+  {
+    TreeNode *root = nullptr;
+    const auto ans = s.inorderTraversal(root);
+    CHECK(ans == vector<int>{});
+  }
+
+  {
+    auto *root = new TreeNode(1);
+    const auto ans = s.inorderTraversal(root);
+    CHECK(ans == vector<int>{1});
+  }
+
+  {
+    auto *root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    const auto ans = s.inorderTraversal(root);
+    CHECK(ans == vector<int>{2, 1});
+  }
+
+  {
+    auto *root = new TreeNode(1);
+    root->right = new TreeNode(2);
+    const auto ans = s.inorderTraversal(root);
+    CHECK(ans == vector<int>{1, 2});
+  }
+
+  {
+    auto *root = new TreeNode(1);
+    root->right = new TreeNode(2);
+    root->right->left = new TreeNode(3);
+    const auto ans = s.inorderTraversal(root);
+    CHECK(ans == vector<int>{1, 3, 2});
+  }
+
+  {
+    auto *root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->left->right = new TreeNode(3);
+    const auto ans = s.inorderTraversal(root);
+    CHECK(ans == vector<int>{2, 3, 1});
+  }
+
+  {
+    auto *root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+    root->right->left = new TreeNode(6);
+    root->right->right = new TreeNode(7);
+    const auto ans = s.inorderTraversal(root);
+    CHECK(ans == vector<int>{4, 2, 5, 1, 6, 3, 7});
+  }
+}
