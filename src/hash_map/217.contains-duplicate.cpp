@@ -37,7 +37,7 @@
  *
  */
 
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 // @lc code=start
 #include <unordered_set>

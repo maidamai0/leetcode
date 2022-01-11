@@ -82,9 +82,8 @@
  *
  *
  */
-#include <vector>
-
 #include "doctest/doctest.h"
+#include <vector>
 
 using namespace std;
 

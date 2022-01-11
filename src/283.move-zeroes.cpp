@@ -4,8 +4,7 @@
  * [283] Move Zeroes
  */
 
-#include "doctest/doctest.h"
-#include <vector>
+#include "common/common.hpp"
 
 using namespace std;
 

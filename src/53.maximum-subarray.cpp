@@ -4,12 +4,7 @@
  * [53] Maximum Subarray
  */
 
-#include <algorithm>
-#include <limits>
-#include <numeric>
-#include <vector>
-
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 using namespace std;
 

@@ -52,7 +52,6 @@
  *
  */
 #include "common/common.hpp"
-#include "doctest/doctest.h"
 
 // @lc code=start
 /**

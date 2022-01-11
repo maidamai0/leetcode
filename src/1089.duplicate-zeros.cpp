@@ -49,9 +49,7 @@
  *
  */
 
-#include <vector>
-
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 // @lc code=start
 class Solution {

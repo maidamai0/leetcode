@@ -62,7 +62,7 @@
  * word1 and word2 consist of lowercase English letters.
  *
  */
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 // @lc code=start
 class Solution {
  public:

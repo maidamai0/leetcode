@@ -58,9 +58,8 @@
  *
  *
  */
-#include <unordered_set>
 
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 // @lc code=start
 class Solution {

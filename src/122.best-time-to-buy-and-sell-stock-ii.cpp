@@ -4,8 +4,7 @@
  * [122] Best Time to Buy and Sell Stock II
  */
 
-#include "doctest/doctest.h"
-#include <vector>
+#include "common/common.hpp"
 
 auto case_1 = std::vector<int>{7, 1, 5, 3, 6, 4};
 auto case_2 = std::vector<int>{1, 2, 3, 4, 5};

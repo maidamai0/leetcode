@@ -1,5 +1,4 @@
 #include "common/common.hpp"
-#include "doctest/doctest.h"
 
 /*
  * @lc app=leetcode id=104 lang=cpp

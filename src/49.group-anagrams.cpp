@@ -9,7 +9,7 @@
 #include <string>
 #include <vector>
 
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 using std::string;
 using std::vector;

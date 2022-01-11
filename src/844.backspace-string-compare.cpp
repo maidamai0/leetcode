@@ -4,9 +4,7 @@
  * [844] Backspace String Compare
  */
 
-#include <string>
-
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 using std::string;
 

@@ -4,12 +4,7 @@
  * [136] Single Number
  */
 
-#include <iostream>
-#include <map>
-#include <set>
-#include <vector>
-
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 using namespace std;
 

@@ -1,5 +1,4 @@
 #include "common/common.hpp"
-#include "doctest/doctest.h"
 
 // @lc code=start
 /**
@@ -53,8 +52,6 @@ public:
 
                         return false;
                       });
-
-    std::cout << std::endl;
   }
 
   void traverse_left_first(TreeNode *node, std::list<TreeNode *> &nodes) {

@@ -1,5 +1,21 @@
 #pragma once
 
+#include <algorithm>
+#include <list>
+#include <numeric>
+#include <queue>
+#include <stack>
+#include <string>
+#include <unordered_map>
+#include <unordered_set>
+#include <vector>
+
+#include "doctest/doctest.h"
+#include "fmt/format.h"
+#include "magic_enum.hpp"
+
+using namespace std;
+
 // Definition for a Node.
 class Node {
 public:

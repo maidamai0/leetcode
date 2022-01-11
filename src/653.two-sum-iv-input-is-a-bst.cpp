@@ -65,11 +65,7 @@
  *
  */
 
-#include <queue>
-#include <unordered_set>
-
 #include "common/common.hpp"
-#include "doctest/doctest.h"
 
 // @lc code=start
 /**

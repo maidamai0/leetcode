@@ -4,14 +4,7 @@
  * [155] Min Stack
  */
 
-#include <algorithm>
-#include <array>
-#include <numeric>
-#include <string>
-#include <vector>
-
-#include "doctest/doctest.h"
-#include "magic_enum.hpp"
+#include "common/common.hpp"
 
 // @lc code=start
 class MinStack {

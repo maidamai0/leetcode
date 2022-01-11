@@ -37,10 +37,7 @@
  * adapt your solution to such a case?
  *
  */
-#include <algorithm>
-#include <array>
-
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 // @lc code=start
 class Solution {

@@ -5,9 +5,6 @@
  */
 
 #include "common/common.hpp"
-#include "doctest/doctest.h"
-#include "fmt/core.h"
-#include "fmt/format.h"
 
 // @lc code=start
 /**

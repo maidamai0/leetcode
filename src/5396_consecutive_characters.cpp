@@ -1,8 +1,4 @@
-#include <algorithm>
-#include <array>
-#include <string>
-
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 using std::string;
 

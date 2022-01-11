@@ -4,9 +4,6 @@
  * [876] Middle of the Linked List
  */
 
-#include <initializer_list>
-#include <vector>
-
 #include "doctest/doctest.h"
 
 /**

@@ -44,9 +44,7 @@
  * In this scenario, how would you change your code?
  */
 
-#include <stdint.h>
-
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 // @lc code=start
 class Solution {

@@ -4,10 +4,9 @@
  * [1] Two Sum
  */
 
+#include "doctest/doctest.h"
 #include <unordered_map>
 #include <vector>
-
-#include "doctest/doctest.h"
 
 using namespace std;
 

@@ -123,8 +123,6 @@ public:
     }
   }
 
-  vector<TreeNode *> generateTrees(int n) {}
-
   vector<int> getRow(int rowIndex) {
     if (rowIndex == 0) {
       return std::vector<int>{1};
@@ -256,7 +254,7 @@ void print_reverse_string(const char *str) {
   std::cout << *str << std::endl;
 }
 
-int main(int argc, char **argv) {
+int main(int, char **) {
   Solution sln;
   sln.kthGrammar(30, 434991989);
 }

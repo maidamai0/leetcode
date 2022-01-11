@@ -4,13 +4,7 @@
  * [1046] Last Stone Weight
  */
 
-#include <algorithm>
-#include <cstdlib>
-#include <queue>
-#include <utility>
-#include <vector>
-
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 using std::vector;
 

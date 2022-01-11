@@ -57,7 +57,8 @@ public:
 };
 // @lc code=end
 
-int main(int argc, char **argv) {
+TEST_CASE("105") {
+
   Solution sl;
   {
     auto preorder = std::vector<int>{3, 9, 20, 15, 7};

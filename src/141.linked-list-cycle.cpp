@@ -65,13 +65,7 @@
  *
  */
 
-#include "doctest/doctest.h"
-
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode(int x) : val(x), next(NULL) {}
-};
+#include "common/common.hpp"
 
 // @lc code=start
 /**

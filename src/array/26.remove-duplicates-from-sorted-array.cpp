@@ -79,9 +79,7 @@
  *
  *
  */
-
 #include "doctest/doctest.h"
-
 // @lc code=start
 #include <vector>
 using namespace std;

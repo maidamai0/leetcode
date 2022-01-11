@@ -4,10 +4,7 @@
  * [4] Median of Two Sorted Arrays
  */
 
-#include <iterator>
-#include <vector>
-
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 using namespace std;
 

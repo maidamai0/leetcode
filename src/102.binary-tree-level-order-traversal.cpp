@@ -77,7 +77,7 @@ public:
 };
 // @lc code=end
 
-int main(int argc, char **argv) {
+int main(int, char **) {
   Solution sl;
   {
     auto root = new TreeNode(3);

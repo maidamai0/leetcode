@@ -65,9 +65,7 @@
  * Follow up: Can you find an O(n) solution?
  */
 
-#include <limits>
-
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 // @lc code=start
 class Solution {

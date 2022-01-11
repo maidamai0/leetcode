@@ -38,7 +38,7 @@
  *
  * Follow-up: Could you solve the problem in linear time and in O(1) space?
  */
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 // @lc code=start
 class Solution {

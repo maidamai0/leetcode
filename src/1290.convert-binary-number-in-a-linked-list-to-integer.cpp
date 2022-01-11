@@ -65,10 +65,7 @@
  * Each node's value is either 0 or 1.
  *
  */
-#include <cstdint>
-
 #include "common/common.hpp"
-#include "doctest/doctest.h"
 
 // @lc code=start
 /**

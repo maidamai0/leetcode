@@ -4,11 +4,7 @@
  * [398] Random Pick Index
  */
 
-#include <algorithm>
-#include <cstdlib>
-#include <vector>
-
-#include "doctest/doctest.h"
+#include "common/common.hpp"
 
 using namespace std;
 
