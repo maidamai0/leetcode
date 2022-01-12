@@ -7,7 +7,7 @@ project(${PROJECT} CXX)
 # cxx standard
 set(CMAKE_CXX_STANDARD 20)
 
-find_program(conan_exe conan.exe DOC "conan python executable")
+find_program(conan_exe conan conan.exe DOC "conan python executable")
 if(conan_exe)
     message(STATUS "Found conan: ${conan_exe}")
     list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
