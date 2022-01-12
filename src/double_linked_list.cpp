@@ -158,7 +158,7 @@ private:
   int size_ = 0;
 };
 
-int main(int argc, char **argv) {
+int main(int, char **) {
   // case 1
   {
     MyLinkedList link;

@@ -80,6 +80,9 @@ struct Operation {
     case OperationType::top: {
       return minstack.top() == result_;
     }
+    default: {
+      return false;
+    }
     }
   }
 };
