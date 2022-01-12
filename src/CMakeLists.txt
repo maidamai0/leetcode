@@ -1,7 +1,6 @@
 file(GLOB_RECURSE srcs "*.cpp")
 foreach(src ${srcs})
     get_filename_component(TARGET ${src} NAME_WLE)
-    message(STATUS "target ${TARGET} added")
     add_executable(${TARGET} ${src})
     target_include_directories(${TARGET} PRIVATE ${CMAKE_CURRENT_LIST_DIR})
     add_test(${TARGET} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${TARGET})
