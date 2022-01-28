@@ -47,3 +47,24 @@ class Solution {
   }
 };
 // @lc code=end
+TEST_CASE("1.two-sum") {
+  Solution s;
+  vector<int> nums{2, 7, 11, 15};
+  int target = 9;
+  vector<int> ans{0, 1};
+  auto ret = s.twoSum(nums, target);
+  auto ok = (ret == std::vector<int>{1, 0}) || (ret == std::vector<int>{0, 1});
+  CHECK(ok);
+
+  nums = {3, 2, 4};
+  target = 6;
+  ret = s.twoSum(nums, target);
+  ok = (ret == std::vector<int>{1, 2}) || (ret == std::vector<int>{2, 1});
+  CHECK(ok);
+
+  nums = {3, 3};
+  target = 6;
+  ret = s.twoSum(nums, target);
+  ok = (ret == std::vector<int>{0, 1}) || (ret == std::vector<int>{1, 0});
+  CHECK(ok);
+}
