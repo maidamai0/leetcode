@@ -60,3 +60,14 @@ class Solution {
   }
 };
 // @lc code=end
+
+TEST_CASE("217.contains-duplicate") {
+  std::vector<int> nums1{1, 2, 3, 1};
+  CHECK(Solution().containsDuplicate(nums1) == true);
+
+  std::vector<int> nums2{1, 2, 3, 4};
+  CHECK(Solution().containsDuplicate(nums2) == false);
+
+  std::vector<int> nums3{1, 1, 1, 3, 3, 4, 3, 2, 4, 2};
+  CHECK(Solution().containsDuplicate(nums3) == true);
+}
