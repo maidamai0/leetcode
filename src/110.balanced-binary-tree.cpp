@@ -69,14 +69,15 @@
  */
 class Solution {
 public:
-  bool isBalanced(TreeNode *root) {
+  bool isBalanced(TreeNode *root) { return dfs_is_balanced(root); }
+
+  bool is_balanced(TreeNode *root) {
     if (!root) {
       return true;
     }
 
-    const auto left_height = height(root->left);
-    const auto right_height = height(root->right);
-    return std::abs(left_height - right_height) <= 1;
+    return std::abs(height(root->left) - height(root->right)) <= 1 &&
+           isBalanced(root->left) && isBalanced(root->right);
   }
 
   int height(TreeNode *root) {
@@ -85,6 +86,30 @@ public:
     }
 
     return max(height(root->left), height(root->right)) + 1;
+  }
+
+  bool dfs_is_balanced(TreeNode *root) { return dfs_height(root) != -1; }
+
+  int dfs_height(TreeNode *root) {
+    if (!root) {
+      return 0;
+    }
+
+    int left_height = dfs_height(root->left);
+    if (left_height == -1) {
+      return -1;
+    }
+
+    int rihgt_height = dfs_height(root->right);
+    if (rihgt_height == -1) {
+      return -1;
+    }
+
+    if (std::abs(left_height - rihgt_height) > 1) {
+      return -1;
+    }
+
+    return std::max(left_height, rihgt_height) + 1;
   }
 };
 
@@ -118,7 +143,11 @@ TEST_CASE("balanced-binary-tree") {
     // [ 1, 2, 2, 3, null, null, 3, 4, null, null, 4 ];
     auto root = new TreeNode(1);
     root->left = new TreeNode(2);
-    root->right = new TreeNode(2);
     root->left->left = new TreeNode(3);
+    root->left->left->left = new TreeNode(4);
+    root->right = new TreeNode(2);
+    root->right->right = new TreeNode(3);
+    root->right->right->right = new TreeNode(4);
+    CHECK(s.isBalanced(root) == false);
   }
 }
